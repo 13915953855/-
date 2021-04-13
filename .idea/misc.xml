@@ -7,6 +7,11 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/netty/netty/pom.xml" />
         <option value="$PROJECT_DIR$/手写SpringBoot的Starter组件/MyStarter/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringCloud项目/eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringCloud项目/eureka-client/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringCloud项目/eureka-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringCloud项目/eureka-server-peer1/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringCloud项目/eureka-server-peer2/pom.xml" />
       </list>
     </option>
   </component>

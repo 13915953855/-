@@ -1,0 +1,11 @@
+server:
+  port: 30000
+
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://peer1:20001/eureka/
+
+spring:
+  application:
+    name: eureka-client

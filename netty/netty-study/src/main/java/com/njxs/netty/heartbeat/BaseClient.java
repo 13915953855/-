@@ -40,9 +40,9 @@ public class BaseClient {
                     future.channel().close();
                 }
             }
-            /*System.out.println("准备重连");
+            System.out.println("准备重连");
             connect(port, host);
-            System.out.println("重连成功");*/
+            System.out.println("重连成功");
         }
     }
 

@@ -11,6 +11,7 @@
     <modules>
         <module>多线程学习/ThreadStudy</module>
         <module>netty/netty-study</module>
+        <module>java示例/java-learn</module>
     </modules>
 
     <properties>

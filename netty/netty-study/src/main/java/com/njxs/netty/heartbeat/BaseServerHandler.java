@@ -4,6 +4,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
+import io.netty.util.ReferenceCountUtil;
 
 public class BaseServerHandler extends ChannelInboundHandlerAdapter{
     
@@ -31,6 +32,7 @@ public class BaseServerHandler extends ChannelInboundHandlerAdapter{
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("server channelRead..");
         System.out.println(ctx.channel().remoteAddress()+"->Server :"+ msg.toString());
+        ReferenceCountUtil.release(msg);
     }
     
     

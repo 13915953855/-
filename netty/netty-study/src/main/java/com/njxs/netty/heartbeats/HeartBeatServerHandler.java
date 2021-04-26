@@ -30,6 +30,7 @@ public class HeartBeatServerHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         System.out.println("server channelRead..");
         System.out.println(ctx.channel().remoteAddress() + "->Server :" + msg.toString());
+        ctx.channel().writeAndFlush("我是服务端");
     }
 
     @Override

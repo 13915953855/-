@@ -15,6 +15,7 @@
         <module name="eureka-server (2)" />
         <module name="eureka-server" />
         <module name="netty-study" />
+        <module name="java-learn" />
         <module name="eureka-client" />
         <module name="eureka-server-peer1" />
         <module name="eureka-consumer" />

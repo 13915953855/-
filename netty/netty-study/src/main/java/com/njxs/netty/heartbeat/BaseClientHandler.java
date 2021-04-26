@@ -10,6 +10,7 @@ import io.netty.util.CharsetUtil;
 import io.netty.util.ReferenceCountUtil;
 
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  * 
@@ -28,6 +29,29 @@ public class BaseClientHandler extends ChannelInboundHandlerAdapter {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("启动时间是："+new Date());
         System.out.println("BaseClient1Handler channelActive");
+        //下面代码是测试内存泄漏
+        /*ctx.channel().config().setWriteBufferHighWaterMark(10*1024*1024);
+        Runnable loadRunner = new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    TimeUnit.SECONDS.sleep(30);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                ByteBuf msg = null;
+                while(true){
+                    if(ctx.channel().isWritable()){
+                        msg = Unpooled.wrappedBuffer("Netty OOM Example".getBytes());
+                        ctx.writeAndFlush(msg);
+                    }else{
+                        System.err.println("写队列忙："+ctx.channel().unsafe().outboundBuffer().nioBufferSize());
+                    }
+
+                }
+            }
+        };
+        new Thread(loadRunner, "LoadRunner-Thread").start();*/
         ctx.fireChannelActive();
     }
 

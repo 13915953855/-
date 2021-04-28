@@ -1,0 +1,17 @@
+server:
+  port: 8001
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: rabbitmq-producer
+  rabbitmq:
+    host: 172.16.3.17
+    port: 5672
+    username: root
+    password: Zywlw2018
+    virtual-host: /
+    publisher-confirm-type: correlated
+    publisher-returns: true
+    template:
+      mandatory: true

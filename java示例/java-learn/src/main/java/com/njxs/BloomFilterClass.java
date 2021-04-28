@@ -13,5 +13,6 @@ public class BloomFilterClass {
     public static void main(String[] args) {
         BloomFilter<String> bloomFilter = BloomFilter.create(Funnels.stringFunnel(Charset.forName("utf-8")), 10000,0.0001);
 
+
     }
 }

@@ -1,0 +1,19 @@
+server:
+  port: 8002
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: rabbitmq-consumer
+  rabbitmq:
+    host: 172.16.3.17
+    port: 5672
+    username: root
+    password: Zywlw2018
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual
+        concurrency: 5
+        max-concurrency: 10
+        prefetch: 1

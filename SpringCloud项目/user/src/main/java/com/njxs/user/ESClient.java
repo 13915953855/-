@@ -200,7 +200,7 @@ public class ESClient {
         // 指定索引
         request.indices("emp");
         // 指定查询条件
-        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder().query(QueryBuilders.regexpQuery("telephone","*55*"));
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder().query(QueryBuilders.prefixQuery("telephone","155"));
         //分页
         searchSourceBuilder.from(0); // 指定页码
         searchSourceBuilder.size(2); // 指定每页的记录数

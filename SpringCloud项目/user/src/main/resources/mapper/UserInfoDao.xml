@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.njxs.user.dao.UserInfoDao">
+
+    <resultMap id="BaseResultMap" type="com.njxs.user.entity.UserInfo">
+        <!--@Table user_info-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="account" column="account" jdbcType="VARCHAR"/>
+        <result property="age" column="age" jdbcType="INTEGER"/>
+        <result property="email" column="email" jdbcType="VARCHAR"/>
+        <result property="level" column="level" jdbcType="INTEGER"/>
+        <result property="levelName" column="level_name" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="passwd" column="passwd" jdbcType="VARCHAR"/>
+        <result property="staffNumber" column="staff_number" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="VARCHAR"/>
+        <result property="telephone" column="telephone" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          id, account, age, email, level, level_name, name, passwd, staff_number, status, telephone
+        from trade.user_info
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, account, age, email, level, level_name, name, passwd, staff_number, status, telephone
+        from trade.user_info
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, account, age, email, level, level_name, name, passwd, staff_number, status, telephone
+        from trade.user_info
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="account != null and account != ''">
+                and account = #{account}
+            </if>
+            <if test="age != null">
+                and age = #{age}
+            </if>
+            <if test="email != null and email != ''">
+                and email = #{email}
+            </if>
+            <if test="level != null">
+                and level = #{level}
+            </if>
+            <if test="levelName != null and levelName != ''">
+                and level_name = #{levelName}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="passwd != null and passwd != ''">
+                and passwd = #{passwd}
+            </if>
+            <if test="staffNumber != null and staffNumber != ''">
+                and staff_number = #{staffNumber}
+            </if>
+            <if test="status != null and status != ''">
+                and status = #{status}
+            </if>
+            <if test="telephone != null and telephone != ''">
+                and telephone = #{telephone}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into trade.user_info(account, age, email, level, level_name, name, passwd, staff_number, status, telephone)
+        values (#{account}, #{age}, #{email}, #{level}, #{levelName}, #{name}, #{passwd}, #{staffNumber}, #{status}, #{telephone})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update trade.user_info
+        <set>
+            <if test="account != null and account != ''">
+                account = #{account},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="email != null and email != ''">
+                email = #{email},
+            </if>
+            <if test="level != null">
+                level = #{level},
+            </if>
+            <if test="levelName != null and levelName != ''">
+                level_name = #{levelName},
+            </if>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="passwd != null and passwd != ''">
+                passwd = #{passwd},
+            </if>
+            <if test="staffNumber != null and staffNumber != ''">
+                staff_number = #{staffNumber},
+            </if>
+            <if test="status != null and status != ''">
+                status = #{status},
+            </if>
+            <if test="telephone != null and telephone != ''">
+                telephone = #{telephone},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from trade.user_info where id = #{id}
+    </delete>
+
+</mapper>

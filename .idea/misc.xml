@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/netty/netty-study/pom.xml" />
         <option value="$PROJECT_DIR$/SpringCloud项目/rabbitmq-producer/pom.xml" />
         <option value="$PROJECT_DIR$/SpringCloud项目/rabbitmq-consumer/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringCloud项目/user/pom.xml" />
       </list>
     </option>
   </component>

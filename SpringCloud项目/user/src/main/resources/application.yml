@@ -1,0 +1,19 @@
+server:
+  port: 16666
+spring:
+  application:
+    name: user
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/trade?useUnicode=true&characterEncoding=utf-8
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: Dap1234$
+    hikari:
+      connection-timeout: 1000
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://localhost:20000/eureka/
+mybatis:
+  mapper-locations: mapper/*.xml

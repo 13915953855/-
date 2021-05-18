@@ -11,6 +11,10 @@ spring:
     password: Dap1234$
     hikari:
       connection-timeout: 1000
+  data:
+    elasticsearch:
+      cluster-nodes: localhost:9200
+      cluster-name: 03902800
 eureka:
   client:
     service-url:

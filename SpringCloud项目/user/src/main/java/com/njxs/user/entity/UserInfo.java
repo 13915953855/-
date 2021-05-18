@@ -1,5 +1,7 @@
 package com.njxs.user.entity;
 
+import lombok.Builder;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +10,7 @@ import java.io.Serializable;
  * @author makejava
  * @since 2021-05-18 14:26:00
  */
+@Builder
 public class UserInfo implements Serializable {
     private static final long serialVersionUID = -12550773175387644L;
     

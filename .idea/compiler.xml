@@ -11,6 +11,7 @@
         <module name="MyStarter" />
         <module name="starter" />
         <module name="ThreadStudy" />
+        <module name="fileIOdemo" />
         <module name="eureka-server (3)" />
         <module name="eureka-server (1)" />
         <module name="eureka-server (2)" />
